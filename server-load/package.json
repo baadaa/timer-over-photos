@@ -1,0 +1,15 @@
+{
+  "name": "load-cloudinary-imgs",
+  "version": "1.0.0",
+  "description": " Running as a server-side app, this creates a `JSON` file at `../data/` with list of images and videos from Cloudinary.Run this only if/when there's an update to Cloudinary resource archive—i.e. files added or/and removed.",
+  "main": "create-list.js",
+  "scripts": {
+    "build": "node create-list",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "B",
+  "license": "MIT",
+  "devDependencies": {
+    "node-fetch": "^2.2.0"
+  }
+}

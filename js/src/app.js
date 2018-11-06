@@ -19,7 +19,7 @@ const progress = document.querySelector('.progress'),
       resumeAutoplay = document.querySelector('.auto-play');
 
 // Timer Elements 
-const totalSeconds = 30;
+const totalSeconds = 1500;
 let currentSecond = totalSeconds,
     interval,
     isPaused = true;
