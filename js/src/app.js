@@ -1,7 +1,7 @@
 import { getTimeString } from './modules/timeStringFormatter';
 import { shuffle } from './modules/shuffle';
 import './modules/flickity.min.css';
-import './modules/style.css';
+import './modules/style.scss';
 import Flickity from 'flickity-bg-lazyload';
 import { imgOptions } from './modules/flkOptions';
 
