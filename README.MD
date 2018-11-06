@@ -16,7 +16,7 @@ A personal app that functions as a digital family photo album and as a pomodoro 
 ---
 
 ### Timer       
-![timer screenshot](https://raw.githubusercontent.com/baadaa/simple-timer/master/timer_screenshot.png)
+![timer screenshot](timer_screenshot.png)
 - Timer icon on the top right corner will launch this feature.
 - Screen prompts an unmistakable countdown clock with a _do not disturb_ message for more focused work.
 - By default the counter is set at 25 minutes--based on the Pomodoro method--which is easily configurable by modifying `totalSeconds` value in seconds. Can be found in `/js/src/app.js`.
