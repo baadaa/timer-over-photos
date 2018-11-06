@@ -1,0 +1,103 @@
+html, body {
+  position: relative;
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: 'Fira Mono', monospace;
+  background: #000;
+  overflow: hidden;
+}
+.photo-app {
+  width: 100vw;
+  height: 100vh;
+  background: #999;
+}
+@-webkit-keyframes bg {
+  0% { background-color: #00A2D9; }
+  33% { background-color: #B7295A; }
+  66% { background-color: #7AB800; }
+  100% { background-color: #00A2D9; }
+}
+@keyframes bg {
+  0% { background-color: #00A2D9; }
+  33% { background-color: #B7295A; }
+  66% { background-color: #7AB800; }
+  100% { background-color: #00A2D9; }
+}
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.timer-container {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  pointer-events: none;
+}
+
+.progress {
+  display: inline-block;
+  height: 100vh;
+  -webkit-animation: bg 21s infinite;
+  animation: bg 21s infinite;
+  width: 0px;
+  pointer-events: none;
+  transition: opacity 2s, width 1s linear;
+}
+.message {
+  font-size: calc(5vw + 3px);
+  pointer-events: none;
+}
+.timer_area {
+  font-size: calc(15vw + 5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#FFF;
+}
+.timer {
+  pointer-events: none;
+}
+.icon {
+  width: 5vw;
+  height: 5vw;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  opacity: .3;
+  cursor: pointer;
+}
+.halt {
+  margin-left: 8vw;
+}
+.btn .txt {
+  font-size: calc(2vw + 5px);
+  padding-left: 1vw;
+}
+.isHidden {
+  display: none;
+}
+.toggle-apps {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: .3;
+}

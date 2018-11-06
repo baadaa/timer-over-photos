@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>B Timer</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="play" viewBox="0 0 100 100">
+      <g><path style="opacity:1;color:#FFFFFF;fill:#FFFFFF;fill-opacity:1;stroke:none;stroke-width:5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;" d="M 50 5 C 25.182716 5 5 25.1827 5 50 C 5 74.8173 25.182716 95 50 95 C 74.817284 95 95 74.8173 95 50 C 95 25.1827 74.817284 5 50 5 z M 50 11 C 71.574644 11 89 28.42534 89 50 C 89 71.5746 71.574644 89 50 89 C 28.425356 89 11 71.5746 11 50 C 11 28.42534 28.425356 11 50 11 z M 38.625 25 A 3.0003 3.0003 0 0 0 36 28 L 36 72 A 3.0003 3.0003 0 0 0 40.625 74.5 L 74.625 52.5 A 3.0003 3.0003 0 0 0 74.625 47.46875 L 40.625 25.46875 A 3.0003 3.0003 0 0 0 38.625 25 z M 42 33.5 L 67.5 50 L 42 66.46875 L 42 33.5 z " />
+      </g>
+    </symbol>
+    <symbol id="cancel" viewBox="0 0 100 100">
+      <g><path style="opacity:1;color:#FFFFFF;fill:#FFFFFF;fill-opacity:1;stroke:none;stroke-width:5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;" d="M 50 5 C 25.182716 5 5 25.1827 5 50 C 5 74.8173 25.182716 95 50 95 C 74.817284 95 95 74.8173 95 50 C 95 25.1827 74.817284 5 50 5 z M 50 11 C 71.574644 11 89 28.42534 89 50 C 89 71.5746 71.574644 89 50 89 C 28.425356 89 11 71.5746 11 50 C 11 28.42534 28.425356 11 50 11 z M 32.65625 29.96875 A 3.0003 3.0003 0 0 0 30.875 35.09375 L 45.75 50 L 30.875 64.875 A 3.0003 3.0003 0 1 0 35.125 69.09375 L 50 54.21875 L 64.875 69.09375 A 3.0003 3.0003 0 1 0 69.125 64.875 L 54.25 50 L 69.125 35.09375 A 3.0003 3.0003 0 0 0 66.65625 29.96875 A 3.0003 3.0003 0 0 0 64.875 30.875 L 50 45.75 L 35.125 30.875 A 3.0003 3.0003 0 0 0 32.65625 29.96875 z "/></g>
+    </symbol>
+    <symbol id="pause" viewBox="0 0 100 100">
+      <g><path style="opacity:1;color:#FFFFFF;fill:#FFFFFF;fill-opacity:1;stroke:none;stroke-width:5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;" d="M 50 5 C 25.18272 5 5 25.1827 5 50 C 5 74.8173 25.18272 95 50 95 C 74.81728 95 95 74.8173 95 50 C 95 25.1827 74.81728 5 50 5 z M 50 11 C 71.574639 11 89 28.42534 89 50 C 89 71.5746 71.574639 89 50 89 C 28.425361 89 11 71.5746 11 50 C 11 28.42534 28.425361 11 50 11 z M 39.96875 24.9375 A 3.0003 3.0003 0 0 0 37 28 L 37 72 A 3.0003 3.0003 0 1 0 43 72 L 43 28 A 3.0003 3.0003 0 0 0 39.96875 24.9375 z M 59.96875 24.9375 A 3.0003 3.0003 0 0 0 57 28 L 57 72 A 3.0003 3.0003 0 1 0 63 72 L 63 28 A 3.0003 3.0003 0 0 0 59.96875 24.9375 z "/></g>
+    </symbol>
+    <symbol id="replay" viewBox="0 0 100 100">
+      <g><path style="opacity:1;color:#FFFFFF;fill:#FFFFFF;fill-opacity:1;stroke:none;stroke-width:5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;" d="M 50 5 C 25.182716 5 5 25.1827 5 50 C 5 74.8173 25.182716 95 50 95 C 74.817284 95 95 74.8173 95 50 C 95 25.1827 74.817284 5 50 5 z M 50 11 C 71.574644 11 89 28.42534 89 50 C 89 71.5746 71.574644 89 50 89 C 28.425356 89 11 71.5746 11 50 C 11 28.42534 28.425356 11 50 11 z M 50 25 C 36.228415 25 25 36.2284 25 50 C 25 63.7716 36.228415 75 50 75 C 62.814196 75 73.430158 65.289882 74.84375 52.84375 L 76.9375 54.84375 A 3.0003 3.0003 0 1 0 81.0625 50.5 L 74.0625 43.8125 A 3.0003 3.0003 0 0 0 71.59375 43 A 3.0003 3.0003 0 0 0 69.9375 43.8125 L 62.9375 50.5 A 3.0003 3.0003 0 1 0 67.0625 54.84375 L 68.71875 53.28125 C 67.171492 62.2321 59.407548 69 50 69 C 39.471052 69 31 60.5289 31 50 C 31 39.47104 39.471052 31 50 31 C 54.613551 31 58.814022 32.60664 62.09375 35.3125 C 63.282932 36.44366 65.423893 36.29693 66.46875 35.03125 C 67.513608 33.76558 67.242175 31.6409 65.90625 30.6875 C 61.580918 27.11899 56.015592 25 50 25 z "/></g>
+    </symbol>
+    <symbol id="stop" viewBox="0 0 100 100">
+      <g><path style="opacity:1;color:#FFFFFF;fill:#FFFFFF;fill-opacity:1;stroke:none;stroke-width:5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;" d="M 50 5 C 25.182716 5 5 25.1827 5 50 C 5 74.8173 25.182716 95 50 95 C 74.817284 95 95 74.8173 95 50 C 95 25.1827 74.817284 5 50 5 z M 50 11 C 71.574644 11 89 28.42534 89 50 C 89 71.5746 71.574644 89 50 89 C 28.425356 89 11 71.5746 11 50 C 11 28.42534 28.425356 11 50 11 z M 32.6875 30 A 3.0003 3.0003 0 0 0 30 33 L 30 67 A 3.0003 3.0003 0 0 0 33 70 L 67 70 A 3.0003 3.0003 0 0 0 70 67 L 70 33 A 3.0003 3.0003 0 0 0 67 30 L 33 30 A 3.0003 3.0003 0 0 0 32.6875 30 z M 36 36 L 64 36 L 64 64 L 36 64 L 36 36 z "/></g>
+    </symbol>
+  </svg>
+  <section class="photo-app">
+    <span class="test">test</span>
+  </section>
+  <section class="timer-app isHidden">
+    <div class="timer-container">
+      <div class="progress"></div>
+    </div>
+    <div class="timer_area">
+      <div class="message">
+        Do not disturb
+      </div>
+      <div class="timer">
+        25:00
+      </div>
+      <div class="buttons">
+        <span class="btn go">
+          <svg class="icon playSvg"><use xlink:href="#play"></svg>
+          <svg class="icon pauseSvg isHidden"><use xlink:href="#pause"></svg>
+          <span class="txt">Start</span>
+        </span>
+        <span class="btn replay isHidden">
+          <svg class="icon playSvg"><use xlink:href="#replay"></svg>
+          <span class="txt">Restart</span>
+        </span>
+        <span class="btn halt">
+          <svg class="icon"><use xlink:href="#stop"></svg>
+          <span class="txt">Reset</span>
+        </span>
+      </div>
+    </div>
+  </section>
+  <div class="toggle-apps">
+      <svg class="icon"><use xlink:href="#cancel"></svg>
+  </div>
+  <script src="js/dist/app.dist.js"></script>
+</body>
+</html>
