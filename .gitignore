@@ -1,2 +1,3 @@
 server-load/
 node_modules/
+.DS_Store
