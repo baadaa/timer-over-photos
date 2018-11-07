@@ -1,10 +1,12 @@
+// FIXME:
+// 'imgOptions' object contains a method to hid preloader upon initial 'ready' event, which has the DOM element hardcoded in it and thus might break should HTML changes. This is a quick fix for a z-index issue in which preloader remains visible on mobile browsers.
+
 import { getTimeString } from './modules/timeStringFormatter';
 import { shuffle } from './modules/shuffle';
 import './modules/flickity.min.css';
 import './modules/style.scss';
 import Flickity from 'flickity-bg-lazyload';
 import { imgOptions } from './modules/flkOptions';
-
 
 let isTimer = false;
 let flkty;
@@ -74,7 +76,6 @@ const togglePlayBtn = (mode) => {
     playBtn.querySelector('.playSvg').classList.remove('isHidden');
     playBtn.querySelector('.pauseSvg').classList.add('isHidden');
   } else {
-
     playBtn.querySelector('.playSvg').classList.toggle("isHidden");
     playBtn.querySelector('.pauseSvg').classList.toggle("isHidden");
   }
@@ -84,7 +85,6 @@ const togglePlayBtn = (mode) => {
     playBtn.querySelector('.txt').textContent = "Pause"
   }
 }
-
 const resetTimer = () => {
   if (currentSecond === totalSeconds) return;
   if (currentSecond <= 0) toggleReplayBtn();
@@ -97,7 +97,6 @@ const resetTimer = () => {
 }
 
 const photoViewerApp = () => {
-
   const assetString = (filename) => {
     return `<div class="carousel-cell" data-flickity-bg-lazyload='${filename}'></div>`;
   }
@@ -118,11 +117,9 @@ const photoViewerApp = () => {
   }
   const init = async () => {
     document.querySelector('.auto-play').addEventListener('click', unpauseFlkty);
-    
     try {
       const imgList = await fetch(`data/images.json`);
       const json = await imgList.json();
-      
       await createFlktyString(shuffle(Array.from(json)));
       await launchFlkty();
     } catch (error) {
@@ -149,16 +146,13 @@ const toggleApps = () => {
   })
   if (isTimer) {
     stopFlkty();
-
   } else {
     unpauseFlkty();
     resetTimer();
-
   }
 }
 window.onload = function() {
   photoViewerApp();
   timerApp();
   toggleAppBtn.addEventListener('click', toggleApps);
-
 }
