@@ -6,8 +6,8 @@ $yellow: #F2AF00;
 html, body {
   position: relative;
   display: flex;
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
   padding: 0;
   margin: 0;
   font-family: 'Fira Mono', monospace;
@@ -35,7 +35,7 @@ html, body {
   transition: all .2s;
   background: rgba(0,0,0,.85);
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 0!important;
   display: flex;
   justify-content: center;
@@ -76,15 +76,15 @@ html, body {
 }
 .timer-container {
   position: relative;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100%;
   pointer-events: none;
   background: black;
 }
 
 .progress {
   display: inline-block;
-  height: 100vh;
+  height: 100%;
   animation: bg 21s infinite;
   width: 0px;
   pointer-events: none;
@@ -99,8 +99,8 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -165,8 +165,8 @@ html, body {
 .photo-app {
   z-index: 10;
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   color:#FFF;
