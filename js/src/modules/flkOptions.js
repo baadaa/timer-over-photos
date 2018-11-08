@@ -7,12 +7,7 @@ const imgOptions = {
   autoPlay: 5000,
   bgLazyLoad: true,
   bgLazyLoad: 2,
-  pauseAutoPlayOnHover: false,
-  on: {
-    ready() {
-      document.querySelector('.preloader').style.display = 'none';
-    }
-  }
+  pauseAutoPlayOnHover: false
 }
 const vidOptions = {
   cellAlign: 'center',

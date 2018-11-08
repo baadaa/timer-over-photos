@@ -1,6 +1,3 @@
-// FIXME:
-// 'imgOptions' object contains a method to hid preloader upon initial 'ready' event, which has the DOM element hardcoded in it and thus might break should HTML changes. This is a quick fix for a z-index issue in which preloader remains visible on mobile browsers.
-
 import { getTimeString } from './modules/timeStringFormatter';
 import { shuffle } from './modules/shuffle';
 import './modules/flickity.min.css';
@@ -25,6 +22,10 @@ const totalSeconds = 1500;
 let currentSecond = totalSeconds,
     interval,
     isPaused = true;
+
+const hidePreloader = () => {
+  document.querySelector('.preloader').style.display = 'none';
+}
 
 const timerApp = () => {
   const countDown = () => {
@@ -107,8 +108,15 @@ const photoViewerApp = () => {
   const launchFlkty = () => {
     const viewer = document.querySelector('.photo-app');
     const carousel = viewer.querySelector('.main-carousel');
+    const imgOptionWithPreloadHandler = {...imgOptions,
+      on: {
+        ready() {
+          hidePreloader();
+        }
+      }
+    }
     viewer.style.display = "flex";
-    flkty = new Flickity(carousel, imgOptions);
+    flkty = new Flickity(carousel, imgOptionWithPreloadHandler);
     flkty.resize();
     flkty.on('pointerDown', function() {
       resumeAutoplay.style.opacity = .1;
