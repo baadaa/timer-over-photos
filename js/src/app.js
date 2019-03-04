@@ -159,8 +159,24 @@ const toggleApps = () => {
     resetTimer();
   }
 }
+const keyTriggerInit = function() {
+  const keyboardEvent = new KeyboardEvent("keydown", {"key": 'Meta', "code": "91", "which":"91", "keyCode": "91", "metaKey": true});
+  // KeyboardEvent constructor: setting a keystroke for "Meta" key.
+
+  const shutdownBtn = document.querySelector('.shutdown');
+  shutdownBtn.addEventListener('click', tapped);
+  document.addEventListener('keydown', keyed);
+
+  function tapped(e) {
+    document.dispatchEvent(keyboardEvent);
+  }
+  function keyed(e) {
+    console.log(e.which);
+  }
+}
 window.onload = function() {
   photoViewerApp();
   timerApp();
   toggleAppBtn.addEventListener('click', toggleApps);
+  keyTriggerInit();
 }
