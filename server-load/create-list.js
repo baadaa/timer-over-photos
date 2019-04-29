@@ -23,7 +23,7 @@ const fetchItems = async () => {
         let filename = item.secure_url;
         if (filename.endsWith('.json')) { 
           continue;
-        } else if (filename.endsWith('.jpg')) {
+        } else if (filename.endsWith('.jpg') || filename.endsWith('.png') ) {
           links.push(processParam(filename));
         } else {
           links.push(filename);
